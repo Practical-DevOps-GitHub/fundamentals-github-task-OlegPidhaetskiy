@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send Discord Notification
-        uses: ilshidur/action-discord@master
+        uses: benc-uk/workflow-discord-webhook@v2
         with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          message: |
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK }}
+          content: |
             🚀 **New Pull Request Created!**
             **Title:** ${{ github.event.pull_request.title }}
             **Author:** ${{ github.event.pull_request.user.login }}
